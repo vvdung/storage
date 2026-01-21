@@ -8,7 +8,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  printf("Loop running ....\n");
+  printf("[DEVKITC-V4] Loop running ....\n");
   delay(1000);
 }
 
