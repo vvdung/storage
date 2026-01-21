@@ -3,12 +3,12 @@
 
 void setup() {
   // put your setup code here, to run once:
-  printf("Hello, World! - DEVKITC-V4\n");
+  printf("Hello, World! - DEVKIT-V1\n");
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  printf("Loop running ....\n");
+  printf("[DEVKIT-V1] Loop running ....\n");
   delay(1000);
 }
 
