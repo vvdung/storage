@@ -25,9 +25,9 @@ String StringFormat(const char *fmt, ...)
   return String(s);
 }
 
-#define PIN_LED_RED     32
+#define PIN_LED_RED     25
 #define PIN_LED_YELLOW  33
-#define PIN_LED_GREEN   25
+#define PIN_LED_GREEN   32
 
 const char* LEDString(uint8_t pin)
 {
@@ -68,9 +68,9 @@ bool ProcessLEDTraffic()
 bool ProcessLEDTrafficWaitTime()
 {
   static unsigned long ulTimer = 0;
-  static uint8_t idxLED = 0;
-  static uint8_t LEDs[3] = {PIN_LED_GREEN, PIN_LED_YELLOW, PIN_LED_RED};
-  static uint32_t waitTime[3] = {7000, 3000, 5000};// Green, Yellow, Red
+  static uint8_t idxLED = 2;//PIN_LED_GREEN
+  static uint8_t LEDs[3] = {PIN_LED_RED, PIN_LED_YELLOW, PIN_LED_GREEN};
+  static uint32_t waitTime[3] = {5000, 3000, 7000};// Red, Yellow, Green
   static uint32_t count = waitTime[idxLED];
   static bool ledStatus = false;
 
@@ -83,7 +83,7 @@ bool ProcessLEDTrafficWaitTime()
     {
       if (i == idxLED){
         digitalWrite(LEDs[i], HIGH);
-        printf("LED %s ON => %d Seconds\n", LEDString(LEDs[i]), count/1000);
+        printf("LED [%-6s] ON => %d Seconds\n", LEDString(LEDs[i]), count/1000);
       }
       else digitalWrite(LEDs[i], LOW);
     }    
